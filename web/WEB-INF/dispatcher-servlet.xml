@@ -19,7 +19,11 @@
 	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="index.htm">indexController</prop>
+				<!--prop key="index.htm">indexController</prop-->
+				<!--Conf JSP's to Use Controllers-->
+				<prop key="index.htm">controlador</prop>
+				
+				
 			</props>
 		</property>
 	</bean>
@@ -31,9 +35,15 @@
 
 	<!--
 	The index controller.
-	-->
+	
 	<bean name="indexController"
 		  class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-		  p:viewName="index" />
+		  p:viewName="index" /> -->
+	
+	<!--
+	Controllers
+	-->
+	
+	<bean name="controlador" class="Controller.Controlador"/>
 
 </beans>

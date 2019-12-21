@@ -6,10 +6,12 @@
 package Controller;
 
 import Config.Conexion;
+import Entidad.Persona;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -30,6 +32,22 @@ public class Controlador {
 		mav.addObject("lista", datos);
 		mav.setViewName("index");
 		return mav;
+	}
+	
+	@RequestMapping(value = "agregar.htm", method = RequestMethod.GET)
+	public ModelAndView Agregar(){
+		mav.addObject(new Persona());
+		mav.setViewName("agregar");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value = "agregar.htm", method = RequestMethod.POST)
+	public ModelAndView Agregar(Persona p){
+		String sql = "insert into persona(Nombres, Correo, Nacionalidad) values(?,?,?);";
+		this.jdbcTemplate.update(sql, p.getNombre(), p.getCorreo(), p.getNacionalidad());
+				
+		return new ModelAndView("redirect: /index.htm");
 	}
 	
 }

@@ -22,7 +22,7 @@
 				<!--prop key="index.htm">indexController</prop-->
 				<!--Conf JSP's to Use Controllers-->
 				<prop key="index.htm">controlador</prop>
-				
+				<prop key="agregar.htm">controlador</prop>
 				
 			</props>
 		</property>

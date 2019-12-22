@@ -35,7 +35,7 @@
 								<td>${dato.Correo}</td>
 								<td>${dato.Nacionalidad}</td>
 								<td>
-									<a href="" class="btn btn-warning">Editar</a>
+									<a href="editar.htm?id=${dato.Id}" class="btn btn-warning">Editar</a>
 									<a href="" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>

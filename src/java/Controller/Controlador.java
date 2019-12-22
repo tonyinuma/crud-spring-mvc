@@ -75,4 +75,14 @@ public class Controlador {
 				
 		return new ModelAndView("redirect: /index.htm");
 	}
+	
+	//Delete Persona
+	@RequestMapping("delete.htm")
+	public ModelAndView Delete(HttpServletRequest  request){
+		id = Integer.parseInt(request.getParameter("id"));
+		
+		String sql = "delete from persona where Id= "+id;
+		this.jdbcTemplate.update(sql);
+		return new ModelAndView("redirect: /index.htm");
+	}
 }
